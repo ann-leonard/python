@@ -5,6 +5,9 @@ compScore = 0
 
 def game():
 
+    global compScore
+    global playerScore
+
     moves = ['rock','paper','scissors']
     playerMove = input("Please choose 'rock', 'paper', or 'scissors': ")
 
@@ -21,6 +24,13 @@ def game():
         print("You lose!")
         compScore +=1
 
-    print(score)
+    print(f'You: {playerScore}')
+    print(f'Computer: {compScore}')
 
-game()
+while playerScore + compScore < 3:
+    game()
+
+if playerScore > compScore:
+    print('You win!')
+else:
+    print('You lose :(')
